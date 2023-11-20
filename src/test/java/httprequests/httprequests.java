@@ -1,5 +1,6 @@
 package httprequests;
 
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
@@ -29,7 +30,7 @@ public class httprequests {
 	@Test(priority=2)
 	public void createUser() {
 		
-		HashMap data = new HashMap();
+		HashMap<String,String> data = new HashMap<String,String>();
 		
 		data.put("Name", "Pavan");
 		data.put("Job","Trainer");
@@ -50,7 +51,7 @@ public class httprequests {
 	@Test(priority=3,dependsOnMethods = ("createUser"))
 	public void updateUser() {
 		
-	HashMap data = new HashMap();
+		HashMap<String,String> data = new HashMap<String,String>();
 		
 		data.put("Name", "Shamanth");
 		data.put("Job","Guide");
